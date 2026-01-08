@@ -1,19 +1,27 @@
-version: "3.9"
+version: '3.8'
 
 services:
   backend:
     build: ./backend
-    container_name: backend
+    container_name: boxletter-backend
     ports:
-      - "3000:3000"
+      - "3001:3001"
     volumes:
-      - ./back/movies.json:/app/movies.json
-      - ./back/users.json:/app/users.json
+      - ./backend/users.json:/app/users.json
+      - ./backend/movies.json:/app/movies.json
+    networks:
+      - boxletter-network
 
   frontend:
-    build: ./src
-    container_name: frontend
+    build: .
+    container_name: boxletter-frontend
     ports:
-      - "3001:80"
+      - "3000:3000"
     depends_on:
       - backend
+    networks:
+      - boxletter-network
+
+networks:
+  boxletter-network:
+    driver: bridge
