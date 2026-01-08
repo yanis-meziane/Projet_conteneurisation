@@ -1,0 +1,19 @@
+version: "3.9"
+
+services:
+  backend:
+    build: ./backend
+    container_name: backend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./back/movies.json:/app/movies.json
+      - ./back/users.json:/app/users.json
+
+  frontend:
+    build: ./src
+    container_name: frontend
+    ports:
+      - "3001:80"
+    depends_on:
+      - backend
