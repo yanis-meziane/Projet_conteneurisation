@@ -1,20 +1,28 @@
 {
   "users": [
-        {
-            "id": 1,
-            "firstname": "Admin",
-            "lastname": "Principal",
-            "email": "admin@boxletter.com",
-            "password": "Admin123!@#",
-            "type": "admin"
-        },
-        {
-            "id": 2,
-            "firstname": "Jean",
-            "lastname": "Dupont",
-            "email": "jean.dupont@example.com",
-            "password": "User123!@#",
-            "type": "user"
-        }
-    ]
+    {
+      "id": 1,
+      "firstname": "Admin",
+      "lastname": "Principal",
+      "email": "admin@boxletter.com",
+      "password": "Admin123!@#",
+      "type": "admin"
+    },
+    {
+      "id": 2,
+      "firstname": "Jean",
+      "lastname": "Dupont",
+      "email": "jean.dupont@example.com",
+      "password": "User123!@#",
+      "type": "user"
+    },
+    {
+      "id": 3,
+      "firstname": "Yanis",
+      "lastname": "Meziane",
+      "email": "yanis.meziane@efrei.net",
+      "password": "$kyPepito2025!",
+      "type": "user"
+    }
+  ]
 }
