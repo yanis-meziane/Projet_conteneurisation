@@ -19,9 +19,25 @@ npm install
 
 1. *Récupération des images et lancement du projet*
 
+> Ouvrez un premier terminal, puis : 
+
+```bash
+cd conteneurisation
+````
+
 ```bash
 docker compose up
 ```
+> Dans un second terminal en parallèle : 
+
+```bash
+cd backend
+```
+
+```bash
+node server.js
+```
+
 
 2. *Adresse URL*
 
@@ -29,7 +45,37 @@ docker compose up
 
 ```bash
 http://localhost:3000
-````
+```
+
+> Les identifiants : 
+
+**Admin** : 
+
+ID : 
+```
+admin@boxletter.com
+```
+
+MDP : 
+
+```
+Admin123!@#
+```
+
+**User** 
+
+ID : 
+```
+jean.dupont@example.com
+```
+
+MDP : 
+
+```
+User123!@#
+```
+
+
 
 ## Mes images 
 
