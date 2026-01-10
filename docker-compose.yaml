@@ -4,7 +4,7 @@ services:
     build: ./backend
     container_name: boxletter-backend
     ports:
-      - "3001:3001"
+      - "3002:3001"
     volumes:
       - ./backend/users.json:/app/users.json
       - ./backend/movies.json:/app/movies.json
@@ -16,7 +16,7 @@ services:
     build: .
     container_name: boxletter-frontend
     ports:
-      - "3000:3000"
+      - "3003:3000"
     depends_on:
       - backend
     networks:
