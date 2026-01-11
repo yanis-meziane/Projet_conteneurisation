@@ -1,101 +1,112 @@
-# Projet docker
+# Boxletter - Application de notation de films
 
-## Installation 
+Application web permettant aux utilisateurs de noter des films et aux administrateurs de gérer le catalogue.
 
-1. *Clônage du projet*
+## Prérequis
 
-```bash 
+- [Node.js](https://nodejs.org/) (version 18 ou supérieure)
+- [Docker](https://www.docker.com/) et Docker Compose
+- [Git](https://git-scm.com/)
+
+## 🚀 Installation
+
+1. **Clonage du projet**
+```bash
 git clone https://github.com/yanis-meziane/Projet_conteneurisation.git
+cd Projet_conteneurisation
 ```
 
-2. *Installer toutes les dépendances*
-
+2. **Installation des dépendances**
 ```bash
+# Dépendances du frontend
 npm install
-````
 
+# Dépendances du backend
+cd backend
+npm install
+cd ..
+```
 
-## Fonctionnement 
+## Lancement de l'application
 
-1. *Récupération des images et lancement du projet*
-
-> Ouvrez un premier terminal, puis : 
-
-```bash
-cd conteneurisation
-````
-
+### Option 1 : Avec Docker Compose 
 ```bash
 docker compose up
 ```
-> Dans un second terminal en parallèle : 
 
+L'application sera accessible sur `http://localhost:3000`
+
+### Option 2 : Lancement manuel
+
+**Terminal 1 - Backend :**
 ```bash
 cd backend
-```
-
-```bash
 node server.js
 ```
 
-
-2. *Adresse URL*
-
-> Tapez dans l'URL
-
+**Terminal 2 - Frontend :**
 ```bash
-http://localhost:3000
+npm start
 ```
 
-> Les identifiants : 
+## Identifiants de test
 
-**Admin** : 
+### Compte Administrateur
+- **Email** : `admin@boxletter.com`
+- **Mot de passe** : `Admin123!@#`
 
-ID : 
+### Compte Utilisateur
+- **Email** : `jean.dupont@example.com`
+- **Mot de passe** : `User123!@#`
+
+## Architecture
+
+- **Frontend** : React (port 3000)
+- **Backend** : Node.js/Express (port 3001)
+- **Base de données** : Fichiers JSON (users.json, movies.json)
+
+## Images Docker
+
+- **Frontend** : [hellfir/boxletter-frontend](https://hub.docker.com/repository/docker/hellfir/boxletter-frontend/general)
+- **Backend** : [hellfir/boxletter-backend](https://hub.docker.com/repository/docker/hellfir/boxletter-backend/general)
+
+## Structure du projet
 ```
-admin@boxletter.com
-```
-
-MDP : 
-
-```
-Admin123!@#
-```
-
-**User** 
-
-ID : 
-```
-jean.dupont@example.com
-```
-
-MDP : 
-
-```
-User123!@#
-```
-
-
-
-## Mes images 
-
-1. Front-end 
-
-```bash
-https://hub.docker.com/repository/docker/hellfir/boxletter-frontend/general
-```
-
-2. Backend
-
-```
-https://hub.docker.com/repository/docker/hellfir/boxletter-backend/general
+.
+├── backend/
+│   ├── server.js
+│   ├── users.json
+│   ├── movies.json
+│   └── Dockerfile
+├── src/
+│   ├── HomePage/
+│   ├── Login/
+│   ├── Register/
+│   ├── admin/
+│   └── main/
+└── docker-compose.yml
 ```
 
-## Les TP
+## Fonctionnalités
 
-> Lien github 
+### Utilisateur
+- Inscription et connexion
+- Consultation du catalogue de films
+- Notation des films (1 à 5 étoiles)
+- Visualisation de la note moyenne
 
-```
-https://github.com/yanis-meziane/Conteneurisation.git
-```
+### Administrateur
+- Ajout de nouveaux films
+- Suppression de films
+- Visualisation des statistiques de notation
 
+
+
+## Ressources
+
+- [Dépôt GitHub principal](https://github.com/yanis-meziane/Projet_conteneurisation.git)
+- [Travaux pratiques](https://github.com/yanis-meziane/Conteneurisation.git)
+
+## Auteur
+
+Yanis Meziane
